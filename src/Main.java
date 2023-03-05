@@ -31,29 +31,28 @@ public class Main {
         int minSum = arr[0];
         int maxSum = arr[0];
 
-        for (int i = 0; i < arr.length; i++){
-            if (arr[i] < minSum){
-                minSum = arr[i];
+        for (int i = 0; i < arr.length; i++) {
+            final int current = arr[i];
+            if (current < minSum) {
+                minSum = current;
             }
-        }
-        for (int i = 0; i < arr.length; i++){
-            if (arr[i] > maxSum){
-                maxSum = arr[i];
+            if (current > maxSum) {
+                maxSum = current;
             }
         }
         System.out.println("Минимальная сумма трат за день составила " + minSum + " рублей. Максимальная сумма трат за день составила " + maxSum + " рублей");
-    }
+            }
+
 
     public static void task3() {
         System.out.println("Задача3");
         int[] arr = generateRandomArray();
         int sum = 0;
         double averageSum = 0;
-        int day = 30;
 
         for (int element : arr) {
             sum = sum + element;
-            averageSum = sum / day;
+            averageSum = sum / arr.length;
         }
         System.out.println("Средняя сумма трат за месяц составила " + averageSum + " рублей");
     }
